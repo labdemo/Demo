@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">电脑预约系统</string>
+    <string name="reserve">预约</string>
+    <string name="record">记录</string>
+    <string name="myinfo">我的</string>
+    <string name="sanjiao">▼</string>
+    <string name="Labinfo_notification">实验室消息通知</string>
+    <string name="testresources">资源测试</string>
+    <string name="backsuggestion">意见反馈</string>
+    <string name="Labinfo_msgboard">实验室留言板</string>
+    <string name="checkfornew">检查更新</string>
+    <string name="about">关于</string>
+
+    <!-- spinner内容 -->
+    <string-array name="equipmentgroup">
+        <item>普通PC</item>
+        <item>MAC</item>
+        <item>pad</item>
+    </string-array>
+    <string-array name="stategroup">
+        <item>所有设备</item>
+        <item>当前可预约</item>
+        <item>已预约</item>
+    </string-array>
+    <string-array name="timegroup">
+        <item>今天上午</item>
+        <item>今天下午</item>
+        <item>今天晚上</item>
+        <item>明天上午</item>
+        <item>明天下午</item>
+        <item>明天晚上</item>
+    </string-array>
+
+    <string name="title_activity_backsuggestion">BacksuggestionActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_lab_infonoti">Lab_infonotiActivity</string>
+    <string name="title_activity_test_resource">Test_resourceActivity</string>
+    <string name="title_activity_checkfornew">CheckfornewActivity</string>
+    <string name="title_activity_msgboard">MsgboardActivity</string>
+    <string name="title_activity_back_suggestion">BackSuggestionActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

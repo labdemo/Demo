@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titlemenuback">#FAFAFA</color>
+    <color name="textselected">#2D91F7</color>
+    <color name="textnomalcolor">#000000</color>
+    <color name="myinfobackcolor">#F8F8F8</color>
+    <color name="stokecolor">#DADADA</color>
+    <color name="whitecolor">#FFFFFF</color>
+    <color name="blackcolor">#000000</color>
+    <color name="titlecolor">#2D91F7</color>
+</resources>

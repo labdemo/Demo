@@ -83,30 +83,5 @@ public class ReserveFragment extends Fragment {
 			
 		}
 	}
-	
-	/*	class SpinnerGroupListener implements OnItemSelectedListener{
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view,
-			int position, long id) {
-		// TODO Auto-generated method stub
-		switch(view.getId()){
-		case R.id.equipmentGroup:
-			Log.i("testout", "equipmentAdapter----------->"+equipmentGroupAdapter.getItem(position));
-			Toast.makeText(getActivity(), "您选择了：" + equipmentGroupAdapter.getItem(position), Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.currentStateGroup:
-			
-			break;
-		case R.id.timeGroup:
-			
-			break;
-		}
-	}
-	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
-		// TODO Auto-generated method stub
-		
-	}
-}*/
 
 }

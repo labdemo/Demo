@@ -51,10 +51,10 @@ public class ReserveFragment extends Fragment {
 		return v;
 	}
 	
-	//获取数据
+	/*//获取数据
 	private void loadData(){
 		
-	}
+	}*/
 	
 	private void initViews(){
 		reserveList = (ListView)v.findViewById(R.id.reserveList);
@@ -70,7 +70,12 @@ public class ReserveFragment extends Fragment {
 		currentStateGroup.setAdapter(currentStateAdapter);
 		timeGroupAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.timegroup, R.layout.spinner_text);
 		timeGroup.setAdapter(timeGroupAdapter);
+
 		//监听器
+		equipmentGroup.setOnItemSelectedListener(new equipmentGroupListener());
+		currentStateGroup.setOnItemSelectedListener(new currentStateGroupListener());
+		timeGroup.setOnItemSelectedListener(new timeGroupListener());
+
 		equipmentGroup.setOnItemSelectedListener(new equipmentGroupListener());
 		currentStateGroup.setOnItemSelectedListener(new currentStateGroupListener());
 		timeGroup.setOnItemSelectedListener(new timeGroupListener());
@@ -88,8 +93,7 @@ public class ReserveFragment extends Fragment {
 			startActivity(intent);
 		}
 	}
-	
-	
+
 	private class equipmentGroupListener implements OnItemSelectedListener{
 		@Override
 		public void onItemSelected(AdapterView<?> parent, View view,
@@ -132,5 +136,29 @@ public class ReserveFragment extends Fragment {
 			
 		}
 	}
-
+	
+	/*	class SpinnerGroupListener implements OnItemSelectedListener{
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view,
+			int position, long id) {
+		// TODO Auto-generated method stub
+		switch(view.getId()){
+		case R.id.equipmentGroup:
+			Log.i("testout", "equipmentAdapter----------->"+equipmentGroupAdapter.getItem(position));
+			Toast.makeText(getActivity(), "您选择了：" + equipmentGroupAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.currentStateGroup:
+			
+			break;
+		case R.id.timeGroup:
+			
+			break;
+		}
+	}
+	@Override
+	public void onNothingSelected(AdapterView<?> parent) {
+		// TODO Auto-generated method stub
+		
+	}
+}*/
 }

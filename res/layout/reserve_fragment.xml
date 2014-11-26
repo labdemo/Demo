@@ -29,6 +29,12 @@
 		android:entries="@array/timegroup"
 		android:spinnerMode="dropdown" />
    	</LinearLayout>
+   	
+   	<ListView
+   	    android:id="@+id/reserveList"
+   	    android:layout_height="wrap_content"
+   	    android:layout_width="fill_parent"
+   	    android:scrollbars="vertical" />
 	
    	
 </LinearLayout>

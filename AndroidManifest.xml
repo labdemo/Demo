@@ -16,42 +16,55 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.demo.login.LoadingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity 
+        <activity
+            android:name="com.demo.login.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.demo.myinfo.activity.PersonInfoActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="com.demo.myinfo.activity.LabNotificationActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="com.demo.myinfo.activity.LabMsgCenterActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="com.demo.myinfo.activity.TestResourceActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="com.demo.myinfo.activity.BackSuggestionActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="com.demo.myinfo.activity.CheckForNewActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-        <activity 
+        <activity
             android:name="com.demo.myinfo.activity.AboutActivity"
-            android:label="@string/hello_world">
+            android:screenOrientation="portrait" >
         </activity>
-	</application>
+        <activity
+            android:name=".ReserveActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
 
 </manifest>

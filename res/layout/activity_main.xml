@@ -3,119 +3,154 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whitecolor"
-    tools:context="com.example.demo.MainActivity" >
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_height="fill_parent"
+    tools:context="com.example.demo.MainActivity" ><LinearLayout
         android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_above="@+id/bottomMenu"
-        android:layout_below="@+id/titlebar" >
-    </android.support.v4.view.ViewPager>
-    
-     <LinearLayout 
+        android:layout_below="@+id/titlebar"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/netWarningLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="40sp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:background="@color/warningbarcolor"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/pic_warning" />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/warningnettext"
+                android:textSize="12.5sp"
+                android:textColor="@color/blackcolor" />
+            </LinearLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+<LinearLayout
         android:id="@+id/titlebar"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
         android:layout_alignParentTop="true"
+        android:background="@color/titlecolor"
+        android:orientation="horizontal"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:background="@color/titlecolor" >
-        
-        <TextView 
+        android:paddingRight="20dp" >
+
+        <TextView
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textSize="20sp"
             android:text="@string/reserve"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/whitecolor"
+            android:textSize="20sp" />
     </LinearLayout>
 
-    
-    <TextView 
-		android:layout_width="fill_parent"
-		android:layout_height="1px"
-		android:background="@color/stokecolor"
-		android:layout_above="@+id/bottomMenu"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/bottomMenu"
+        android:background="@color/stokecolor" />
+
     <LinearLayout
         android:id="@+id/bottomMenu"
         android:layout_width="fill_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
+        android:background="@color/titlemenuback"
+        android:orientation="horizontal"
         android:paddingBottom="5dp"
-        android:paddingTop="8dp"
-        android:background="@color/titlemenuback" >
-        <RelativeLayout 
+        android:paddingTop="8dp" >
+
+        <RelativeLayout
             android:id="@+id/reserveMenuLayout"
-            android:layout_height="fill_parent"
             android:layout_width="0dp"
+            android:layout_height="fill_parent"
             android:layout_weight="1" >
+
             <ImageView
                 android:id="@+id/reserveImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/pic_bespeak_blue" />
+
             <TextView
                 android:id="@+id/reserveText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
                 android:text="@string/reserve"
-                android:textSize="13sp"
                 android:textColor="@color/textselected"
-                android:gravity="center_horizontal" />"
+                android:textSize="13sp" />
+"
         </RelativeLayout>
-        <RelativeLayout 
+
+        <RelativeLayout
             android:id="@+id/recordMenuLayout"
-            android:layout_height="fill_parent"
             android:layout_width="0dp"
+            android:layout_height="fill_parent"
             android:layout_weight="1" >
+
             <ImageView
                 android:id="@+id/recordImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/pic_record_normal" />
+
             <TextView
                 android:id="@+id/recordText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
                 android:text="@string/record"
-                android:textSize="13sp"
                 android:textColor="@color/textnomalcolor"
-                android:gravity="center_horizontal" />    
-            
+                android:textSize="13sp" />
         </RelativeLayout>
-        <RelativeLayout 
+
+        <RelativeLayout
             android:id="@+id/myInfoMenuLayout"
-            android:layout_height="fill_parent"
             android:layout_width="0dp"
+            android:layout_height="fill_parent"
             android:layout_weight="1" >
+
             <ImageView
                 android:id="@+id/myInfoImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/pic_myinfo_normal" />
+
             <TextView
                 android:id="@+id/myInfoText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
                 android:text="@string/myinfo"
-                android:textSize="13sp"
                 android:textColor="@color/textnomalcolor"
-                android:gravity="center_horizontal" />
+                android:textSize="13sp" />
         </RelativeLayout>
-        
     </LinearLayout>
 
 </RelativeLayout>

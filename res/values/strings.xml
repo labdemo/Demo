@@ -16,6 +16,10 @@
     <string name="checkfornew">检查更新</string>
     <string name="about">关于</string>
     <string name="warningnettext">当前网络不可用，请检查网络设置。</string>
+    <string name="loading">正在加载</string>
+    <string name="pulltorefresh">下拉刷新</string>
+    <string name="relasetorefresh">松开立即刷新</string>
+    <string name="lastrefreshtime">上次刷新时间：</string>
 
 
     <!-- spinner内容 -->

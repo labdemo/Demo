@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whitecolor"
-    tools:context="com.example.demo.MainActivity" ><LinearLayout
+    tools:context="com.example.demo.MainActivity" >
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@+id/bottomMenu"
@@ -14,33 +16,36 @@
             android:id="@+id/netWarningLayout"
             android:layout_width="fill_parent"
             android:layout_height="40sp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
             android:background="@color/warningbarcolor"
             android:orientation="horizontal"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
             android:visibility="gone" >
-            <ImageView 
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/pic_warning" />
-            <TextView 
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:text="@string/warningnettext"
-                android:textSize="12.5sp"
-                android:textColor="@color/blackcolor" />
-            </LinearLayout>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-            </android.support.v4.view.ViewPager>
+                android:textColor="@color/blackcolor"
+                android:textSize="12.5sp" />
         </LinearLayout>
-<LinearLayout
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/titlebar"
         android:layout_width="fill_parent"
         android:layout_height="50dp"

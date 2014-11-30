@@ -28,7 +28,7 @@ public class LoadingActivity extends Activity {
 				finish();
 				overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 			}
-		}, 1000*2);
+		}, 1000*1);
 	}
 }
 

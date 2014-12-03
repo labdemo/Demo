@@ -19,7 +19,21 @@
     <string name="loading">正在加载</string>
     <string name="pulltorefresh">下拉刷新</string>
     <string name="relasetorefresh">松开立即刷新</string>
-    <string name="lastrefreshtime">上次刷新时间：</string>
+    <string name="lastrefreshtime">上次更新：</string>
+    <string name="touchtoloadmore">点击加载更多</string>
+    <string name="isloadingmore">正在努力加载</string>
+	
+    <string name="devicenumber">设备编号：</string>
+    <string name="deviceclassify">设备分类：</string>
+    <string name="deviceinfo">设备信息：</string>
+    
+    <string name="choosereservetime">请选择预约时间：</string>
+    <string name="todaymorning">今天上午</string>
+    <string name="todayafternoon">今天下午</string>
+    <string name="todayevening">今天晚上</string>
+    <string name="tmomorning">明天上午</string>
+    <string name="tmoafternoon">明天下午</string>
+    <string name="tmoevening">明天晚上</string>
 
 
     <!-- spinner内容 -->

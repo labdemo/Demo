@@ -36,7 +36,7 @@
     </LinearLayout>
 
     <com.demo.xlistview.XListView
-         android:id="@+id/reserveList"
+         	android:id="@+id/reserveList"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scrollbars="vertical" >

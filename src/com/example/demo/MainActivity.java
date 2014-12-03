@@ -28,7 +28,7 @@ import com.demo.fragment.RecordFragment;
 import com.demo.fragment.ReserveFragment;
 
 public class MainActivity extends FragmentActivity {
-	private TextView reserveText, recordText, myInfoText, titleText;
+	private TextView reserveText, recordText, myInfoText, mainTitleText;
 	private RelativeLayout reserveMenuLayout, recordMenuLayout, myInfoMenuLayout;
 	private LinearLayout netWarningLayout;
 	private ImageView reserveImage, recordImage, myInfoImage;
@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity {
 
 	// 获取控件
 	private void initViews() {
-		titleText = (TextView) findViewById(R.id.titleText);
+		mainTitleText = (TextView) findViewById(R.id.mainTitleText);
 		reserveText = (TextView) findViewById(R.id.reserveText);
 		recordText = (TextView) findViewById(R.id.recordText);
 		myInfoText = (TextView) findViewById(R.id.myInfoText);
@@ -137,13 +137,13 @@ public class MainActivity extends FragmentActivity {
 				.getColor(R.color.textselected));
 		switch (localNextselectedPager) {
 		case 0:
-			titleText.setText(R.string.reserve);
+			mainTitleText.setText(R.string.reserve);
 			break;
 		case 1:
-			titleText.setText(R.string.record);
+			mainTitleText.setText(R.string.record);
 			break;
 		case 2:
-			titleText.setText(R.string.myinfo);
+			mainTitleText.setText(R.string.myinfo);
 			break;
 		}
 		nowSelectedPager = localNextselectedPager;

@@ -3,7 +3,163 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.demo.ReserveActivity" >
-	
-    
+
+    <LinearLayout
+        android:id="@+id/reserveTitleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/titlecolor"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:id="@+id/reversrTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/whitecolor"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/reserveTitleBar"
+        android:background="#F8F8F8"
+        android:padding="15dp" >
+
+        <ScrollView
+            android:id="@+id/deviceInfoLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="160dp"
+            android:background="@drawable/device_info_text"
+            android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/deviceNumber"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/devicenumber"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/deviceClassify"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deviceclassify"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/deviceInfoText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deviceinfo"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/reserveTimeTipText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceInfoLayout"
+            android:layout_marginTop="25dp"
+            android:text="@string/choosereservetime"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/reserveTimeGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reserveTimeTipText"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/device_info_text"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/todayMorning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/todaymorning"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/todayAfternoon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/todayafternoon"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/todayEvening"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/todayevening"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/tmoMorning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tmomorning"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/tmoAfternoon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tmoafternoon"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/tmoEvening"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tmoevening"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reserveButton"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/reserve_button_selected"
+            android:text="@string/reserve"
+            android:textColor="@color/whitecolor"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
 </RelativeLayout>

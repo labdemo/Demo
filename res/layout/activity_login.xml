@@ -46,6 +46,6 @@
         android:gravity="center"
         android:text="@string/login"
         android:textColor="@color/whitecolor"
-        android:textSize="16sp" />
+        android:textSize="17sp" />
 
 </RelativeLayout>

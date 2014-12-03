@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:orientation="horizontal"
-    android:background="@color/whitecolor"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:paddingTop="10dp" >
-    
-    <ImageView
-        android:id="@+id/equipImage"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:src="@drawable/ic_launcher" />
-    <RelativeLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="5dp" >
-        
-        <TextView
-            android:id="@+id/itemNameText"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:text="普通PC"
-            android:textColor="@color/blackcolor"
-            android:textSize="17sp" />
-        
-        <TextView
-            android:id="@+id/itemStateText"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/itemNameText"
-            android:text="可預約"
-            android:textColor="@color/blackcolor"
-            android:textSize="13sp" />
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp" >
 
-        <TextView
-            android:id="@+id/itemReserveText"
+    <LinearLayout
+        android:id="@+id/listViewTopLayout"
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+        android:background="@color/whitecolor"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/equipImage"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_toLeftOf="@+id/itemGoImage"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="预约 >"
-            android:textColor="@color/itemreserve"
-            android:textSize="10sp" />
-    </RelativeLayout>
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/itemNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="普通PC"
+                android:textColor="@color/blackcolor"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/itemStateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/itemNameText"
+                android:text="可預約"
+                android:textColor="@color/blackcolor"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/toReserveActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/jiantou2" />
+        </RelativeLayout>
+    </LinearLayout>
+<!--     <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/stokecolor" /> -->
 
 </LinearLayout>

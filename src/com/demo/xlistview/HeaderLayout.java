@@ -60,21 +60,16 @@ public class HeaderLayout extends RelativeLayout {
 		pullImage = (ImageView)findViewById(R.id.pulljiantou);
 		headerLoadingBar = (ProgressBar)findViewById(R.id.headerLoadingBar);
 		
-		//箭头向上旋转动画
 		headerUpAnimotion = new RotateAnimation(0.0f, 180.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 		headerUpAnimotion.setDuration(200);
 		headerUpAnimotion.setFillAfter(true);
-		//箭头向下旋转动画
 		headerDownAnimotion = new RotateAnimation(180.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 		headerDownAnimotion.setDuration(200);
 		headerDownAnimotion.setFillAfter(true);
-		//初始状态
 		currentState = STATE_NORMAL;
 	}
 	
-	//设置headerLayout的状态
 	public void setState(int state){
-		//相同state连续滑动触发则return
 		if(currentState == state){
 			return ;
 		}
@@ -96,7 +91,6 @@ public class HeaderLayout extends RelativeLayout {
 				pullImage.startAnimation(headerDownAnimotion);
 			}
 			if(currentState == STATE_ISREFRESHING){
-				//下拉又上拉
 				pullImage.clearAnimation();
 			}
 			pullRefreshText.setText(R.string.pulltorefresh);
@@ -116,7 +110,6 @@ public class HeaderLayout extends RelativeLayout {
 	}
 	
 	
-	//set header高度
 	public void setHeight(int height) {
 		if (height < 0){
 			height = 0;

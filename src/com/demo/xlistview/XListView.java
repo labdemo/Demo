@@ -16,17 +16,15 @@ import android.widget.Scroller;
 public class XListView extends ListView implements OnScrollListener {
 	
 	private HeaderLayout headerLayout;
+	private FooterLayout footerLayout;
 	
-	//header height
-	private static final int HEADERLAYOUT_HEIGHT = 100;
 	
-	//刷新状态
 	private boolean isRefereshing = false;
 	
-	//记录滑动过程中每一次触发ontouch函数的Y坐标
 	private int DownY;
+	private int headerLayoutHeight;
+	private int mtotalItemCount;
 		
-	//监听滑动
 	private Scroller mScroller;
 	private OnScrollListener mOnScrollListener;
 	
@@ -58,14 +56,29 @@ public class XListView extends ListView implements OnScrollListener {
 		mScroller = new Scroller(context, new DecelerateInterpolator());
 		headerLayout = new HeaderLayout(context);
 		addHeaderView(headerLayout);
+		
+		footerLayout = new FooterLayout(context);
+		addFooterView(footerLayout);
+		
+		
+		headerLayoutHeight = dipTopx(context, 60);
 	}
 	
-	//设置时间
+	
+	/*public static int pxTodip(Context context, float pxValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (pxValue / scale + 0.5f);
+	}*/
+	
+	private static int dipTopx(Context context, float dpValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dpValue * scale + 0.5f);
+	}
+	
 	public void setRefreshTime(String time){
 		headerLayout.refreshTimeText.setText(time);
 	}
 	
-	//setSelection
 	@Override
 	public void setAdapter(ListAdapter adapter) {
 		// TODO Auto-generated method stub
@@ -86,6 +99,14 @@ public class XListView extends ListView implements OnScrollListener {
 		if (mOnScrollListener != null) {
 			mOnScrollListener.onScrollStateChanged(view, scrollState);
 		}
+		if(getLastVisiblePosition() == mtotalItemCount -1){
+			mListViewListener.onLoadMore();
+			footerLayout.setStatus(FooterLayout.STATE_ISLOADING);
+		}
+	}
+	
+	public void stopLoadMore(){
+		footerLayout.setStatus(FooterLayout.STATE_NORMAL);
 	}
 
 	@Override
@@ -96,6 +117,7 @@ public class XListView extends ListView implements OnScrollListener {
 		if (mOnScrollListener != null) {
 			mOnScrollListener.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
 		}
+		mtotalItemCount = totalItemCount;
 	}
 	
 	@Override
@@ -103,11 +125,9 @@ public class XListView extends ListView implements OnScrollListener {
 		// TODO Auto-generated method stub
 		switch(ev.getAction()){
 		case MotionEvent.ACTION_DOWN:
-			//记录初始按下的DownY
 			DownY = (int)ev.getRawY();
 			break;
 		case MotionEvent.ACTION_MOVE:
-			//滑动过程中，系统会在滑动的过程中上取一些点，用DownY记录
 			int diatance = (int)ev.getRawY() - DownY;
 			DownY = (int)ev.getRawY();
 			if (getFirstVisiblePosition() == 0 && (headerLayout.getHeight() > 0 || diatance > 0)) {
@@ -120,14 +140,13 @@ public class XListView extends ListView implements OnScrollListener {
 						headerLayout.setState(HeaderLayout.STATE_NORMAL);
 					}
 				}
-				setSelection(0); // scroll to top each time
+				setSelection(0);
 				invokeOnScrolling();
 			}
 			break;
 		case MotionEvent.ACTION_UP:
 			if(getFirstVisiblePosition() == 0){
-				if(headerLayout.getHeight() > HEADERLAYOUT_HEIGHT){
-					//进入刷新状态
+				if(headerLayout.getHeight() > headerLayoutHeight){
 					headerLayout.setState(HeaderLayout.STATE_ISREFRESHING);
 					isRefereshing = true;
 					if (mListViewListener != null) {
@@ -147,12 +166,12 @@ public class XListView extends ListView implements OnScrollListener {
 		if(headerLayout.getHeight() == 0){
 			return ;
 		}
-		if(isRefereshing && headerLayout.getHeight() <= HEADERLAYOUT_HEIGHT){
+		if(isRefereshing && headerLayout.getHeight() <= headerLayoutHeight){
 			return ;
 		}
 		int finalHeight = 0;
-		if(isRefereshing && headerLayout.getHeight() > HEADERLAYOUT_HEIGHT){
-			finalHeight = HEADERLAYOUT_HEIGHT;
+		if(isRefereshing && headerLayout.getHeight() > headerLayoutHeight){
+			finalHeight = headerLayoutHeight;
 		}
 		mScrollBack = SCROLLBACK_HEADER;
 		mScroller.startScroll(0, headerLayout.getHeight(), 0, finalHeight - headerLayout.getHeight(), 500);
@@ -194,6 +213,6 @@ public class XListView extends ListView implements OnScrollListener {
 	}
 	public interface IXListViewListener {
 		public void onRefresh();
-
+		public void onLoadMore();
 	}
 }

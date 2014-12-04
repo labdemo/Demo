@@ -12,23 +12,30 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.demo.xlistview.XListView;
 import com.demo.xlistview.XListView.IXListViewListener;
+import com.example.demo.MainActivity;
+import com.example.demo.MainActivity.MyOnTouchListener;
 import com.example.demo.R;
 import com.example.demo.ReserveActivity;
 
 public class ReserveFragment extends Fragment implements IXListViewListener {
-
+	
+	private ImageView equipmentGroupImage, currentStateGroupImage, timeGroupImage;
+	private Animation spinnerImageUp,spinnerImageDown;
 	private SimpleDateFormat dateFormatter;
 	private Spinner equipmentGroup, currentStateGroup, timeGroup;
 	private View v;
@@ -46,6 +53,7 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 		initViews();
 		initEvents();
 		loadData();
+		((MainActivity) getActivity()).registerMyOnTouchListener(myOnTouchListener); 
 
 		handler = new Handler() {
 			@Override
@@ -77,7 +85,9 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 		equipmentGroup = (Spinner) v.findViewById(R.id.equipmentGroup);
 		currentStateGroup = (Spinner) v.findViewById(R.id.currentStateGroup);
 		timeGroup = (Spinner) v.findViewById(R.id.timeGroup);
-
+		equipmentGroupImage = (ImageView)v.findViewById(R.id.equipmentGroupImage);
+		currentStateGroupImage = (ImageView)v.findViewById(R.id.currentStateGroupImage);
+		timeGroupImage = (ImageView)v.findViewById(R.id.timeGroupImage);
 	}
 
 	private void initEvents() {
@@ -94,14 +104,9 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 
 		// 监听器
 		equipmentGroup.setOnItemSelectedListener(new equipmentGroupListener());
-		currentStateGroup
-				.setOnItemSelectedListener(new currentStateGroupListener());
+		currentStateGroup.setOnItemSelectedListener(new currentStateGroupListener());
 		timeGroup.setOnItemSelectedListener(new timeGroupListener());
 
-		equipmentGroup.setOnItemSelectedListener(new equipmentGroupListener());
-		currentStateGroup
-				.setOnItemSelectedListener(new currentStateGroupListener());
-		timeGroup.setOnItemSelectedListener(new timeGroupListener());
 
 		itemArrayList = new ArrayList<HashMap<String, Object>>();
 		listAdapter = new SimpleAdapter(getActivity(), itemArrayList,
@@ -113,6 +118,13 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 
 		dateFormatter = new SimpleDateFormat("MM月dd日 HH:mm:ss");
 
+		spinnerImageUp = new RotateAnimation(0.0f, 180.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+		spinnerImageUp.setDuration(500);
+		spinnerImageUp.setFillAfter(true);
+		
+		spinnerImageDown = new RotateAnimation(180.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+		spinnerImageDown.setDuration(500);
+		spinnerImageDown.setFillAfter(true);
 	}
 
 	// 获取数据
@@ -193,23 +205,24 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 		reserveList.setRefreshTime(time);
 	}
 
+	
 	private class equipmentGroupListener implements OnItemSelectedListener {
+
 		@Override
 		public void onItemSelected(AdapterView<?> parent, View view,
 				int position, long id) {
 			// TODO Auto-generated method stub
-			Log.i("testout", "equipmentAdapter----------->"
-					+ equipmentGroupAdapter.getItem(position));
-			Toast.makeText(getActivity(),
-					"您选择了：" + equipmentGroupAdapter.getItem(position),
-					Toast.LENGTH_SHORT).show();
+			
 		}
 
 		@Override
 		public void onNothingSelected(AdapterView<?> parent) {
 			// TODO Auto-generated method stub
-
+			
 		}
+
+		
+		
 	}
 
 	private class currentStateGroupListener implements OnItemSelectedListener {
@@ -217,8 +230,6 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 		public void onItemSelected(AdapterView<?> parent, View view,
 				int position, long id) {
 			// TODO Auto-generated method stub
-			Log.i("testout", "currentstateAdapter----------->"
-					+ currentStateAdapter.getItem(position));
 
 		}
 
@@ -243,5 +254,22 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 
 		}
 	}
+	
+	
+	private MyOnTouchListener myOnTouchListener = new MainActivity.MyOnTouchListener() {
+
+		@Override
+		public boolean onTouch(MotionEvent ev) {
+			// TODO Auto-generated method stub
+			Log.i("testout", "-------->spinner down");
+			/*if(equipmentGroup.isShown() || currentStateGroup.isShown() || timeGroup.isShown()){
+				equipmentGroupImage.clearAnimation();
+				timeGroupImage.clearAnimation();
+				timeGroupImage.clearAnimation();
+			}*/
+			return false;
+		} 
+		
+	};
 
 }

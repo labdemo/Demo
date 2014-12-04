@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +16,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.SimpleOnPageChangeListener;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -222,4 +225,29 @@ public class MainActivity extends FragmentActivity {
 		}
 		return super.onKeyDown(keyCode, event);
 	}
+	
+	
+	private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(
+			10);
+
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		for (MyOnTouchListener listener : onTouchListeners) {
+			listener.onTouch(ev);
+		}
+		return super.dispatchTouchEvent(ev);
+	}
+
+	public void registerMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
+		onTouchListeners.add(myOnTouchListener);
+	}
+
+	public void unregisterMyOnTouchListener(MyOnTouchListener myOnTouchListener) {
+		onTouchListeners.remove(myOnTouchListener);
+	}
+
+	public interface MyOnTouchListener {
+		public boolean onTouch(MotionEvent ev);
+	}
+
 }

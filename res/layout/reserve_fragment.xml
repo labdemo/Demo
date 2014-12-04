@@ -8,40 +8,101 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/whitecolor"
         android:orientation="horizontal" >
 
-        <Spinner
-            android:id="@+id/equipmentGroup"
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:entries="@array/equipmentgroup"
-            android:spinnerMode="dropdown" />
+            android:layout_weight="1" >
 
-        <Spinner
-            android:id="@+id/currentStateGroup"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:entries="@array/stategroup"
-            android:spinnerMode="dropdown" />
+            <Spinner
+                android:id="@+id/equipmentGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/whitecolor"
+                android:entries="@array/equipmentgroup"
+                android:spinnerMode="dropdown" />
 
-        <Spinner
-            android:id="@+id/timeGroup"
+            <ImageView
+                android:id="@+id/equipmentGroupImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/pic_spinner_downblue" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/itemstroke" />
+
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:entries="@array/timegroup"
-            android:spinnerMode="dropdown" />
+            android:layout_weight="1" >
+
+            <Spinner
+                
+                android:id="@+id/currentStateGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/whitecolor"
+                android:entries="@array/stategroup"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:id="@+id/currentStateGroupImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/pic_spinner_downblue" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/itemstroke" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <Spinner
+                android:id="@+id/timeGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/whitecolor"
+                android:entries="@array/timegroup"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:id="@+id/timeGroupImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/pic_spinner_downblue" />
+        </RelativeLayout>
     </LinearLayout>
 
     <com.demo.xlistview.XListView
         android:id="@+id/reserveList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:listSelector="@color/reservebackcolor"
         android:divider="@color/dividercolor"
         android:dividerHeight="9dp"
+        android:listSelector="@color/reservebackcolor"
         android:scrollbars="vertical" >
     </com.demo.xlistview.XListView>
 

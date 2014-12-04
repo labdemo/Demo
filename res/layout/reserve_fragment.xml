@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whitecolor"
+    android:background="@color/reservebackcolor"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -36,11 +36,13 @@
     </LinearLayout>
 
     <com.demo.xlistview.XListView
-         	android:id="@+id/reserveList"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:scrollbars="vertical" >
-        
+        android:id="@+id/reserveList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@color/reservebackcolor"
+        android:divider="@color/dividercolor"
+        android:dividerHeight="9dp"
+        android:scrollbars="vertical" >
     </com.demo.xlistview.XListView>
 
 </LinearLayout>

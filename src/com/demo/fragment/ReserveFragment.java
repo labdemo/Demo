@@ -13,29 +13,22 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.demo.login.LoadingActivity;
 import com.demo.xlistview.XListView;
 import com.demo.xlistview.XListView.IXListViewListener;
 import com.example.demo.R;
-import com.example.demo.R.string;
 import com.example.demo.ReserveActivity;
 
 public class ReserveFragment extends Fragment implements IXListViewListener {
 
-	//private Button loadMoreButton;
-	//private ProgressBar loadingMoreBar;
 	private SimpleDateFormat dateFormatter;
 	private Spinner equipmentGroup, currentStateGroup, timeGroup;
 	private View v;
@@ -133,7 +126,7 @@ public class ReserveFragment extends Fragment implements IXListViewListener {
 
 	}
 
-	// LisiView Item Listener
+	// LisiView ItemCilck Listener
 	class itemClickListener implements OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,

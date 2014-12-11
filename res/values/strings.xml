@@ -27,13 +27,37 @@
     <string name="deviceclassify">设备分类：</string>
     <string name="deviceinfo">设备信息：</string>
     
+    <string name="canreservetime">当前可预约时间：</string>
     <string name="choosereservetime">请选择预约时间：</string>
-    <string name="todaymorning">今天上午</string>
-    <string name="todayafternoon">今天下午</string>
-    <string name="todayevening">今天晚上</string>
     <string name="tmomorning">明天上午</string>
     <string name="tmoafternoon">明天下午</string>
     <string name="tmoevening">明天晚上</string>
+    <string name="aftertmomorning">后天上午</string>
+    <string name="aftertmoafternoon">后天下午</string>
+    <string name="aftertmoevening">后天晚上</string>
+    
+    <!-- PersonInfo -->
+    <string name="change">修改</string>
+    <string name="logout">退出登录</string>
+    <string name="changeHeadPhoto">修改头像</string>
+    <string name="selectpicture">选择图片</string>
+    <string name="takepicture">拍照</string>
+    <string name="upload">上传</string>
+    
+    <!-- 修改信息 -->
+    <string name="changepassword">修改密码</string>
+    <string name="inputpassword">请输入新密码</string>
+    <string name="inputagain">请重复输入确认</string>
+    
+    <!-- back suggestion -->
+    <string name="backedithint">请在此处输入您想要反馈的信息</string>
+    <string name="commit">提交</string>
+    <string name="backcommitsuccess">我们已经收到您的反馈信息！</string>
+    
+    <!-- 关于 -->
+    <string name="abouttext">大连理工大学创新实验学院</string>
+    <string name="labinfo">移动互联实验室820</string>
+    <string name="version">版本号：V 1.0</string>
 
 
     <!-- spinner内容 -->
@@ -48,12 +72,12 @@
         <item>已预约</item>
     </string-array>
     <string-array name="timegroup">
-        <item>今天上午</item>
-        <item>今天下午</item>
-        <item>今天晚上</item>
         <item>明天上午</item>
         <item>明天下午</item>
         <item>明天晚上</item>
+        <item>后天上午</item>
+        <item>后天下午</item>
+        <item>后天晚上</item>
     </string-array>
 
     <string name="title_activity_backsuggestion">BacksuggestionActivity</string>

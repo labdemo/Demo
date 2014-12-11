@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.demo.fragment.MyInfoFragment;
 import com.demo.fragment.RecordFragment;
 import com.demo.fragment.ReserveFragment;
+import com.demo.myinfo.activity.PersonInfoActivity;
 
 public class MainActivity extends FragmentActivity {
 	private TextView reserveText, recordText, myInfoText, mainTitleText;
@@ -51,9 +52,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		initViews();
 		initEvents();
-		IntentFilter netStateFilter = new IntentFilter();
-		netStateFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-		MainActivity.this.registerReceiver(netStateReceiver, netStateFilter);
+		initReceivers();
 	}
 
 	// 获取控件
@@ -89,6 +88,17 @@ public class MainActivity extends FragmentActivity {
 		myInfoMenuLayout.setOnClickListener(bottomMenuLayoutListener);
 		viewPager.setAdapter(fpaAdapter);
 		viewPager.setOnPageChangeListener(sopclistener);
+	}
+	//BroadcastReceiver
+	private void initReceivers(){
+		IntentFilter netStateFilter = new IntentFilter();
+		netStateFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+		MainActivity.this.registerReceiver(netStateReceiver, netStateFilter);
+		
+		IntentFilter finishActivityFilter = new IntentFilter();
+		finishActivityFilter.addAction(PersonInfoActivity.ACTION_MYACTION);
+		MainActivity.this.registerReceiver(finishMainActivityReceiver, finishActivityFilter);
+		
 	}
 
 	private OnClickListener bottomMenuLayoutListener = new OnClickListener() {
@@ -208,7 +218,15 @@ public class MainActivity extends FragmentActivity {
 			}
 		}
 	};
-
+	
+	//取消广播注册
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		MainActivity.this.unregisterReceiver(netStateReceiver);
+		MainActivity.this.unregisterReceiver(finishMainActivityReceiver);
+	};
+	
 	// 复写返回键实现按两次返回键退出程序
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -226,10 +244,20 @@ public class MainActivity extends FragmentActivity {
 		return super.onKeyDown(keyCode, event);
 	}
 	
+	//退出登录接收广播销毁MainActivity
+	private BroadcastReceiver finishMainActivityReceiver = new BroadcastReceiver () {
+		
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// TODO Auto-generated method stub
+			if(intent.getAction().equals(PersonInfoActivity.ACTION_MYACTION)){
+				MainActivity.this.finish();
+			}
+		}
+	};
 	
-	private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(
-			10);
-
+	//给fragment提供onKeyEvent的接口
+	private ArrayList<MyOnTouchListener> onTouchListeners = new ArrayList<MyOnTouchListener>(10);
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		for (MyOnTouchListener listener : onTouchListeners) {

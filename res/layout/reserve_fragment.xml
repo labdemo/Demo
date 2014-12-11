@@ -10,6 +10,10 @@
         android:layout_height="50dp"
         android:background="@color/whitecolor"
         android:orientation="horizontal" >
+        <TextView 
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="@color/itemstroke" />
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -94,14 +98,24 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/pic_spinner_downblue" />
         </RelativeLayout>
+        <TextView 
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="@color/itemstroke" />
+        
     </LinearLayout>
+    
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/stokecolor"/>
 
     <com.demo.xlistview.XListView
         android:id="@+id/reserveList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="@color/dividercolor"
-        android:dividerHeight="9dp"
+        android:dividerHeight="0px"
         android:listSelector="@color/reservebackcolor"
         android:scrollbars="vertical" >
     </com.demo.xlistview.XListView>

@@ -90,39 +90,6 @@
                 android:orientation="horizontal" >
 
                 <RadioButton
-                    android:id="@+id/todayMorning"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/todaymorning"
-                    android:textColor="@color/blackcolor"
-                    android:textSize="13sp" />
-
-                <RadioButton
-                    android:id="@+id/todayAfternoon"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/todayafternoon"
-                    android:textColor="@color/blackcolor"
-                    android:textSize="13sp" />
-
-                <RadioButton
-                    android:id="@+id/todayEvening"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/todayevening"
-                    android:textColor="@color/blackcolor"
-                    android:textSize="13sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <RadioButton
                     android:id="@+id/tmoMorning"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -146,6 +113,39 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/tmoevening"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/afterTmoMorning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/aftertmomorning"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/afterTmoAfternoon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/aftertmoafternoon"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/afterTmoEvening"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/aftertmoevening"
                     android:textColor="@color/blackcolor"
                     android:textSize="13sp" />
             </LinearLayout>

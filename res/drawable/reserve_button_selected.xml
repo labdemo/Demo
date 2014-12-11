@@ -3,14 +3,14 @@
     <item android:state_pressed="true" >
         <shape>
             <gradient android:startColor="@color/loginbuttonsel" android:endColor="@color/loginbuttonsel"/>
-            <corners android:radius="5dp"/>
+            <corners android:radius="4dp"/>
         </shape>
     </item>
     
 	<item >
         <shape>
             <gradient android:startColor="#25BCF4" android:endColor="#30BCF4" android:angle="270"/>
-            <corners android:radius="5dp"/>
+            <corners android:radius="4dp"/>
         </shape>
     </item>
 

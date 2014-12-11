@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/simplebackground" >
+
+    <LinearLayout
+        android:id="@+id/changeInFoTitleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/titlecolor"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:id="@+id/changeInFoTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/change"
+            android:textColor="@color/whitecolor"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:id="@+id/changePasswwordLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changeInFoTitleBar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical" >
+		
+        <EditText
+        	android:layout_width="1px"
+        	android:layout_height="1px" />
+
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/changepassword"
+            android:textSize="15sp" />
+        <EditText
+            android:id="@+id/newPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/device_info_text"
+            android:hint="@string/inputpassword"
+            android:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/newPasswordAgain"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/device_info_text"
+            android:hint="@string/inputagain"
+            android:inputType="textPassword"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/changePasswordButotn"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/login_button_selected"
+            android:layout_marginTop="10dp"
+            android:text="@string/changepassword"
+            android:textSize="14sp"
+            android:textColor="@color/whitecolor" />
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:id="@+id/setHeadPhotoLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/changePasswwordLayout" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/changeHeadPhoto"
+            android:textSize="15sp" />
+        <ImageView 
+            android:id="@+id/personHeadPhotoSelected"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pic_personheadphoto"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:id="@+id/selectHeadPhototLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/personHeadPhotoSelected"
+            android:layout_marginTop="10dp" >
+            <Button 
+                android:id="@+id/selectPhotoFromGallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/selectpicture" />
+            
+            <Button 
+                android:id="@+id/selectPhotoFromCamera"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/takepicture" />
+        </LinearLayout>
+        
+        <Button 
+            android:id="@+id/commitHeadPhoto"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:text="@string/upload"
+            android:textSize="14sp"
+            android:textColor="@color/whitecolor"
+            android:layout_below="@id/selectHeadPhototLayout"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button_selected" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -3,15 +3,16 @@ package com.demo.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.demo.myinfo.activity.AboutActivity;
 import com.demo.myinfo.activity.BackSuggestionActivity;
-import com.demo.myinfo.activity.CheckForNewActivity;
 import com.demo.myinfo.activity.LabMsgCenterActivity;
 import com.demo.myinfo.activity.LabNotificationActivity;
 import com.demo.myinfo.activity.PersonInfoActivity;
@@ -40,6 +41,7 @@ public class MyInfoFragment extends Fragment {
 		backSuggestionLayout = (RelativeLayout)v.findViewById(R.id.backSuggestionLayout);
 		checkForNewLayout = (RelativeLayout)v.findViewById(R.id.checkForNewLayout);
 		aboutLayout = (RelativeLayout)v.findViewById(R.id.aboutLayout);
+		
 	}
 	private void initEvents(){
 		RelativelayoutListener layoutlistener = new RelativelayoutListener();
@@ -53,6 +55,7 @@ public class MyInfoFragment extends Fragment {
 	}
 	
 	public class RelativelayoutListener implements OnClickListener{
+
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
@@ -79,8 +82,7 @@ public class MyInfoFragment extends Fragment {
 				startActivity(intent);
 				break;
 			case R.id.checkForNewLayout:
-				intent.setClass(getActivity(), CheckForNewActivity.class);
-				startActivity(intent);
+				Log.i("testout", "----------->click");
 				break;
 			case R.id.aboutLayout:
 				intent.setClass(getActivity(), AboutActivity.class);

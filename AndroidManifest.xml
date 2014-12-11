@@ -5,11 +5,13 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="16"
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_logo"
@@ -63,6 +65,10 @@
         </activity>
         <activity
             android:name=".ReserveActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.demo.changeinfo.ChangeInFoActivity"
             android:screenOrientation="portrait" >
         </activity>
     </application>

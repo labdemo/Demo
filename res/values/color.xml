@@ -14,5 +14,14 @@
     <color name="itemreserve">#707070</color>
     <color name="reservebackcolor">#EBEDF0</color>
     <color name="dividercolor">#EAECEF</color>
-    <color name="itemstroke">#DBDDE0</color>
+    <color name="itemstroke">#D0D0D0</color>
+    <color name="radiobuttonselected">#B0B0B0</color>
+    
+    <color name="logoutbuttonnormla">#FF3C00</color>
+    <color name="logoutbuttonsel">#DA3C17</color>
+    
+    <color name="simplebackground">#F8F8F8</color>
+    
+    <color name="commitbuttonstart">#FEFEFE</color>
+    <color name="commitbuttonend">#F1F1F1</color>
 </resources>
